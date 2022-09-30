@@ -14,6 +14,11 @@ export const users = [
         name: "Deborah",
         email: "deborah@gmail.com",
         address: "Buea"
+    },
+    {
+        name: "Nono Saurelle",
+        email: "nonosaurelle@gmail.com",
+        address: "Kribi"
     }
 ]
 
