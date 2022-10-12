@@ -1,10 +1,12 @@
+import userModel from "../models/users.model.js";
 import { Users } from "../modules/users.module.js"
 
 const userController = {};
 
-userController.getUsers = (req,res)=>{
-    // To send a response;
-    res.send(Users);
+userController.getUsers = async (req,res) => {
+    // Use the userModel to find users from the database
+    const dbUsers = await userModel.find();
+    res.send(dbUsers);
 
 }
 
@@ -14,11 +16,12 @@ userController.getUserByEmail = (req,res) =>{
     res.send(User[0]);
 }
 
-userController.addUser = (req,res) =>{
+userController.addUser = async(req,res) =>{
     const newUser = req.body;
     newUser.createdAt = new Date(Date.now());
     newUser.isLoggedIn = true;
-    users.push(newUser);
+    
+    const newDbUser = await userModel.create(newUser)
 
     res.status(200).send({
         status: 200,

@@ -6,15 +6,15 @@ import userController from "../controllers/client.controller.js";
 const userRouter = express.Router()
 
 // Get all users endpoints
-userRouter.get("/users",userController.getUsers);
+userRouter.get("/",userController.getUsers);
 // get user by email
 userRouter.get("/User/:email",userController.getUserByEmail);
 // Add New User
-userRouter.post("/User/add",userController.getUsers);
+userRouter.post("/addUser",userController.addUser);
 // Update user
 
 // Delete user
-userRouter.delete("/Users", userController.getUsers);
+userRouter.delete("/Users", userController.deleteUser);
 
 
 export default userRouter;

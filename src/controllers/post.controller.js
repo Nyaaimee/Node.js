@@ -3,7 +3,7 @@ import  Posts  from "../modules/post.module.js"
 const postsController = {};
 
 postsController.getPosts = (req, res) => {
-    response.send(Posts);
+    res.send(Posts);
 }
 
 postsController.addPosts = (req, res) => {
